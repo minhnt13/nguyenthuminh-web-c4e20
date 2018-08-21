@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mùa đông không lạnh</title>
+</head>
+<body>
+    <h1>Search page</h1>
+    {% for service in all_service %}
+    <div>
+        {% if service.gender == 1%}
+        <img src="../static/image/male-profile.jpg" alt="">
+        {% else %}
+        <img src="../static/image/female-profile.jpg" alt="">
+        {% endif %}
+        <p>Tên: {{ service.name }}</p>
+        <p>Năm sinh: {{ service.yob }}</p>
+        <p>Chiều cao: {{ service.height }} cm</p>
+        <hr>
+    </div>
+    {% endfor %}
+</body>
+</html>

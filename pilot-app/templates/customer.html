@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mùa Đông Không Lạnh</title>
+</head>
+<body>
+    <h1>Customer</h1>
+    {% for customer in all_customer %}
+    <div>
+        <p>Tên : {{ customer.name }} </p>
+        <p>Năm sinh: {{ customer.yob }} </p>
+        <p>Giới tính: 
+            {% if customer.gender == 1 %}
+            Nam
+            {% else %}
+            Nữ
+            {% endif %}
+        </p>
+        <hr>
+    </div>
+    {% endfor %}
+</body>
+</html>
