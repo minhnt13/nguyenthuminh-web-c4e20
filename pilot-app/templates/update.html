@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mùa Đông Không Lạnh</title>
+</head>
+<body>
+    <img src="{{ service.image }}" alt="Chưa có ảnh" style="width:450px;height:470px;">
+    <h1>Cập nhật thông tin</h1>
+    <form method="POST">
+        <label for=""><b>Tên:</b></label>
+        <input type="text" value="{{ service.name }}" name="name">
+        <br>
+
+        <label for=""><b>Năm sinh:</b></label>
+        <input type="text" value="{{ service.yob }}" name="yob">
+        <br>
+        
+        <label for=""><b>Giới tính:</b></label>
+        <input type="text" 
+        {% if service.gender == 1 %} value="Nam"
+        {% else %} value="Nữ"
+        {% endif %}
+        name="gender">
+        <br>
+
+        <label for=""><b>Chiều cao:</b></label>
+        <input type="text" value="{{ service.height }} cm" name="height">
+        <br>
+
+        <label for=""><b>Số điện thoại:</b></label>
+        <input type="text" value="{{ service.phone }}" name="phone">
+        <br>
+
+        <label for=""><b>Địa chỉ:</b></label>
+        <input type="text" value="{{ service.address }}" name="address">
+        <br>
+
+        <label for=""><b>Mô tả:</b></label>
+        <input type="text" value="{{ service.descriptions }}" name="descriptions">
+        <br>
+
+        <label for=""><b>Số đo 3 vòng:</b></label>
+        <input type="text" value="{{ service.measurements }}" name="measurements">
+        <br>
+       
+        <input type="submit" value="Cập nhật">
+    </form>
+
+</body>
+</html>

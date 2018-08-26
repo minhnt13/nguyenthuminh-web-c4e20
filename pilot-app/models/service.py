@@ -1,5 +1,5 @@
 from mongoengine import *
-# Design Database
+# Re-Design Database
 class Service(Document):
     name = StringField()
     yob = IntField()
@@ -8,3 +8,6 @@ class Service(Document):
     phone = StringField()
     address = StringField()
     status = IntField()
+    image = StringField()
+    measurements = ListField()
+    descriptions = ListField()
