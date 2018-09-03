@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CMS App</title>
+</head>
+<body>
+    <h1>CMS App</h1>
+    <a href="{{ url_for("login") }}">Đăng nhập</a>
+    {% for video in videos %}
+    <div>
+        <img src="{{ video.thumbnail }}" 
+        alt=""
+        width="200px"
+        height="130px">
+        <br>
+        <b>{{ video.title }}</b>
+        <br>
+        <b>{{ video.views }} views</b>
+        <a href="{{ url_for("detail", youtube_id=video.youtube_id)}}">XEM</a>
+    {% endfor %}
+    </div>
+</body>
+</html>

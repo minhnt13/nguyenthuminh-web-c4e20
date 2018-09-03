@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CMS App</title>
+</head>
+<body>
+    <h1>Admin Playground</h1>
+    <a href="{{ url_for("logout")}}">Đăng xuất</a>
+    <form method="POST">
+        <label for="">Link</label>
+        <input type="text" name="link">
+        <input type="submit" value="Gửi link">
+    </form>
+    <br>
+    <table border="1px">
+        <thead>
+            <th>STT</th>
+            <th>Title</th>
+            <th>Link</th>
+            <th>Views</th>
+            <th>Thumbnail</th>
+        </thead>
+        <tbody>
+            {% for video in videos %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ video.title }}</td>
+                <td>
+                    <a 
+                    href="{{ video.link }}"
+                    target="#">View</a>
+                </td>
+                <td>{{ video.views }}</td>
+                <td>
+                    <img 
+                    src="{{ video.thumbnail }}"
+                    alt=""
+                    width="200px" 
+                    height="150px">
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

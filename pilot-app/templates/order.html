@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mùa Đông Không Lạnh</title>
+</head>
+<body>
+    <h1>Danh sách yêu cầu</h1>
+    <table border="1px">
+        <thead>
+            <th>STT</th>
+            <th>Đối tác</th>
+            <th>Người dùng</th>
+            <th>Thời gian yêu cầu</th>
+            <th>Phê duyệt</th>
+        </thead>
+        <tbody>
+                {% for order in orders %}
+            <tr>
+                {% if order.is_accepted == False %}
+                <td>{{ loop.index }}</td>
+                <td>{{ order.service.name }}</td>
+                <td>{{ order.user.username }}</td>
+                <td>{{ order.order_time }}</td>
+                <td>
+                    <a href="{{ url_for("accepted", order_id=order.id) }}">Phê duyệt yêu cầu</a>
+                </td>
+            </tr>
+                {% endif %}
+                {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

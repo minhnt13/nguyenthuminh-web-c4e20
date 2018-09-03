@@ -8,12 +8,13 @@
 </head>
 <body>
     <h1>Search page</h1>
+    <a href="{{ url_for("index" )}}">Về trang chủ</a>
     {% for service in all_service %}
     <div>
-        {% if service.gender == 1%}
-        <img src="../static/image/male-profile.jpg" alt="">
-        {% else %}
-        <img src="../static/image/female-profile.jpg" alt="">
+        {% if service.gender == 1 %}
+        <img src="{{ service.image }}" width="450px" height="470px">
+        {% elif service.gender == 0 %}
+        <img src="{{ service.image }}" width="450px" height="470px">
         {% endif %}
         <p>Tên: {{ service.name }}</p>
         <p>Năm sinh: {{ service.yob }}</p>

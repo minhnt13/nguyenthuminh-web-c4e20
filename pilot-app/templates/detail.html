@@ -7,6 +7,8 @@
     <title>Mùa Đông Không Lạnh</title>
 </head>
 <body>
+    <a href="{{ url_for("logout") }}">Đăng xuất</a>
+    <br>
     <img src="{{ service.image }}" alt="Chưa có ảnh" style="width:450px;height:470px;">
     <h1>{{ service.name }}</h1>
     <p><b>Năm sinh:</b> {{ service.yob }} </p>
@@ -20,5 +22,6 @@
     <p><b>Số đo 3 vòng:</b>
         {{ service.measurements[0] }} - {{ service.measurements[1] }} - {{ service.measurements[2] }}
     </p>
+    <a href="{{ url_for("ordered") }}">Yêu cầu dịch vụ</a>
 </body>
 </html>
