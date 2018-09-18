@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mùa Đông Không Lạnh</title>
+    {% include "metadata.html" %}
 </head>
 <body>
-    <h1>Mùa Đông Không Lạnh</h1>
-        <a href="{{ url_for("admin") }}">Quản lý</a>
-        <br>
-        <a href="{{ url_for("search", g=0) }}">Click vào em đi</a>
-        <a href="{{ url_for("search", g=1) }}">Click vào anh đi</a>
-        <br>
-        <a href=/customer/male/contacted>10 khách hàng nam chưa liên hệ đầu tiên</a>
+    {% include "homepage/navigation.html" %}
+    {% include "homepage/carousel.html" %}
+    {% include "homepage/welcome.html" %}
+    {% include "homepage/vote.html" %}
+    {% include "homepage/servicepacks.html" %}
+    {% include "homepage/footer.html" %}
 </body>
 </html>

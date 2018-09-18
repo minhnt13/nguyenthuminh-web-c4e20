@@ -1,0 +1,25 @@
+<!-- welcome -->
+<div>
+    <br>
+    <h2 class="text-center">Chào mừng các bạn đã đến với Mùa Đông Không Lạnh</h1>
+    <br>
+    <h5 class="text-center font-lobster">"Chúng tôi ở đây là để giúp cho bạn có mối quan hệ tốt đẹp với gia đình, người thân trong khi vẫn giữ được sự tự do và riêng tư, cũng như quyết định của bản thân bạn"</h5>
+    <div class="d-flex flex-row justify-content-around" style="margin: 3% 0; position: relative;">
+        <div class="col-md-5 d-flex justify-content-center" style="position: relative">
+            <a href="{{ url_for("search", g=0) }}">
+                <img src="../static/image/female.jpg" class="height-240px width-600px" alt="female.jpg">
+            </a>
+            <a href="{{ url_for("search", g=0) }}" style="top: 50%; right: 10rem; position: absolute;">
+                <p class="font-weight-bold text-light">Bạn là Nam</p>
+            </a>
+        </div>
+        <div class="col-md-5 d-flex justify-content-center" style="position: relative">
+            <a href="{{ url_for("search", g=1) }}">
+                <img src="../static/image/male.jpg" class="height-240px width-600px" alt="male.jpg">
+            </a>
+            <a href="{{ url_for("search", g=1) }}" style="top: 50%; left: 10rem; position: absolute;">
+                <p class="font-weight-bold text-light">Bạn là Nữ</p>
+            </a>
+        </div>
+    </div>
+</div>
